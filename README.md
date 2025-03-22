@@ -1,93 +1,68 @@
-# PaperTWO
+# Enhancing ETCD Operations in Kubernetes with LevelDB and BadgerDB
+
+## 📚 Publication Details
+- Title: Enhancing ETCD Operations in Kubernetes with LevelDB and BadgerDB
+- Published in: International Journal For Multidisciplinary Research (IJFMR)
+- Volume / Issue: Volume 4, Issue 4, July-August 2022
+- Paper ID: 31556
+- Link: https://www.ijfmr.com/research-paper.php?id=31556
+- ISSN: 2582-2160
+- Impact Factor: 9.24
 
 
+## 🚀 Abstract
+This study explores optimizing ETCD operations in Kubernetes clusters by integrating alternative storage backends: LedgerDB and BadgerDB. The analysis focuses on improving performance, CPU utilization, and scalability in managing Kubernetes' distributed key-value data store. Notably, the BadgerDB implementation demonstrates higher efficiency, reduced CPU usage, and better time complexity over LedgerDB, making it a promising choice for high-performance Kubernetes clusters.
 
-## Getting started
+## 💡 Key Contributions
+- Cluster Setup & Optimization
+  Set up and optimized a Kubernetes cluster infrastructure, leveraging LedgerDB and BadgerDB for enhanced ETCD operations. Developed database structures in Go to collect and analyze operational metrics.
+- Performance Evaluation
+  Conducted comprehensive evaluations comparing the baseline ETCD system with custom LedgerDB and BadgerDB integrations. Results were documented using detailed tables and graphs, showcasing improvements in insertion, deletion, and search operations across various cluster sizes.
+- Conclusions & Future Directions
+  Summarized key findings, proposed future research directions, and provided a foundation for continued innovation in scalable distributed system architectures.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 🎯 Relevance and Impact
+- The optimized cluster infrastructure and the use of custom database backends significantly enhance the efficiency and scalability of ETCD in real-world distributed systems.
+- Comprehensive system evaluations demonstrate measurable improvements in CPU usage, memory efficiency, and operation time (insertion, deletion, search), providing a clear path for resource optimization.
+- The study lays the groundwork for future advancements, offering a practical implementation strategy for organizations aiming to improve the performance of their Kubernetes-based deployments.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## 📊 Summary of Results
+| Cluster Size | Store Size | Insertion Time (µs) | Deletion Time (µs) | Search Time (µs) | CPU Usage (%) |
+|--------------|------------|---------------------|--------------------|------------------|---------------|
+| 3-10 Nodes   | 16 GB      | 200 - 280           | 220 - 390          | 160 - 280        | 25% - 55%     |
+| ...          | ...        | ...                 | ...                | ...              | ...           |
 
-## Add your files
+- LedgerDB exhibited higher CPU usage and slower operation times compared to BadgerDB.
+- BadgerDB showed better CPU efficiency and faster response times, confirming its suitability for high-performance scenarios.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+## 🛠️ Technologies Used
+- Kubernetes (Multi-node cluster with 32 CPU / 64 GB RAM for Master Nodes, 24 CPU / 32 GB RAM for Worker Nodes)
+- Go (Golang) for developing LedgerDB and BadgerDB integrations
+- LedgerDB (Append-only, blockchain-inspired database)
+- BadgerDB (High-performance LSM-based key-value store)
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/gitlab3225912/papertwo.git
-git branch -M main
-git push -uf origin main
-```
+## 🔬 Key Technical Highlights
+- Time Complexity: O(log n) for insertion, deletion, and search operations
+- Space Complexity: O(n) relative to the number of stored entries
+- BadgerDB Advantage: Provides ACID-compliant transactions, real-time processing, snapshot support, and better CPU/memory efficiency
+- LedgerDB Use Case: Suitable for scenarios requiring verifiable, immutable transaction logs but incurs higher CPU overhead.
 
-## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/gitlab3225912/papertwo/-/settings/integrations)
+## 📖 Citation
+If you use this work, please cite it as follows:
 
-## Collaborate with your team
+Satya Ram Tsaliki, Dr. B. Purnachandra Rao. "Enhancing ETCD Operations in Kubernetes with LevelDB and BadgerDB." International Journal for Multidisciplinary Research (IJFMR), Volume 4, Issue 4, July-August 2022, Paper ID: 31556, ISSN: 2582-2160, Impact Factor: 9.24.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+```bibtex
+@article{tsaliki2022enhancing,
+  title={Enhancing ETCD Operations in Kubernetes with LevelDB and BadgerDB},
+  author={Tsaliki, Satya Ram and Purnachandra Rao, B.},
+  journal={International Journal for Multidisciplinary Research (IJFMR)},
+  volume={4},
+  number={4},
+  year={2022},
+  month={July-August},
+  pages={1-27},
+  issn={2582-2160},
+  doi={https://www.ijfmr.com/research-paper.php?id=31556}
+}
